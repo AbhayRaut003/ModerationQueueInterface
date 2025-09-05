@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mobile-first responsive utilities */
+@layer utilities {
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+  
+  .tap-highlight-transparent {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer utilities {
+  .animate-slide-in-right {
+    animation: slideInRight 0.3s ease-out;
+  }
+  
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  /* Mobile-specific line clamping */
+  @media (max-width: 640px) {
+    .line-clamp-2 {
+      -webkit-line-clamp: 3;
+    }
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+@media (min-width: 640px) {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+/* Mobile touch improvements */
+@media (max-width: 640px) {
+  button, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Improve touch targets */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Prevent zoom on input focus on iOS */
+@media screen and (max-width: 640px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="search"],
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}
