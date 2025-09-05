@@ -29,6 +29,7 @@ export interface ModerationState {
     action: string;
     timestamp: number;
   }>;
+  currentPage: number;
 }
 
 export interface ToastNotification {
