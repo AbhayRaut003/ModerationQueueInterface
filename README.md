@@ -37,3 +37,6 @@ npm install
 
 # Start the development server:
 npm run dev
+
+# Live demo URL
+https://moderation-queue-interface.vercel.app/
